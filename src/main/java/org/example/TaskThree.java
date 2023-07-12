@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class TaskThree {
     public static void main(String[] args) {
@@ -35,11 +34,11 @@ public class TaskThree {
 
         Map<String, Integer> mp = new HashMap<>();
 
-        for (int i = 0; i < words.length; i++) {
-            if (mp.containsKey(words[i])) {
-                mp.put(words[i], mp.get(words[i]) + 1);
+        for (String word : words) {
+            if (mp.containsKey(word)) {
+                mp.put(word, mp.get(word) + 1);
             } else {
-                mp.put(words[i], 1);
+                mp.put(word, 1);
             }
         }
 
@@ -53,7 +52,7 @@ public class TaskThree {
 
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
-        list.sort(Map.Entry.comparingByValue(new Comparator<V>() {
+        list.sort(Map.Entry.comparingByValue(new Comparator<>() {
             @Override
             public int compare(V o1, V o2) {
                 Integer i1 = (Integer) o1;

@@ -32,8 +32,5 @@ public class TaskOne {
                 System.out.println(telNumber);
             }
         }
-
-        String[] res;
-
     }
 }
