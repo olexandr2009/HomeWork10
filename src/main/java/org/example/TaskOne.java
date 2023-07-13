@@ -6,8 +6,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TaskOne {
+    private static final String absolutePath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\task1\\file.txt";
     public static void main(String[] args) {
-        String absolutePath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\file1.txt";
         File file = new File(absolutePath);
         if (!file.exists()){
             file.getParentFile().mkdirs();
