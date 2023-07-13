@@ -1,10 +1,7 @@
 package org.example.task2;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TaskTwo {
     private static final String absolutePath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\task2\\file.txt";

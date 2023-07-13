@@ -30,6 +30,7 @@ public class TaskThree {
         byte[] data = buffInputStream.readAllBytes();
 
         String all = new String(data);
+        all = removeSpaces(all);
         String words[] = all.replace("\r\n", " ").split("\\W");
 
         Map<String, Integer> mp = new HashMap<>();
@@ -49,6 +50,7 @@ public class TaskThree {
             System.out.println(arrKeys[i] + " " + mp.get(arrKeys[i]));
         }
     }
+
 
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
@@ -71,6 +73,14 @@ public class TaskThree {
             result.put(entry.getKey(), entry.getValue());
         }
         return result;
+    }
+    private static String removeSpaces(String toRemove){
+        String last;
+        do {
+            last = toRemove;
+            toRemove = toRemove.replace("  ", " ");
+        }while (!toRemove.equals(last));
+        return toRemove;
     }
 }
 /*
