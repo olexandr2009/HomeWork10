@@ -9,14 +9,9 @@ public class TaskOne {
     private static final String absolutePath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\task1\\file.txt";
     public static void main(String[] args) {
         File file = new File(absolutePath);
-        if (!file.exists()){
-            file.getParentFile().mkdirs();
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+
+        TaskThree.makeFile(file);
+
         try(BufferedInputStream buffInputStream = new BufferedInputStream(new FileInputStream(file))){
             printTelNumber(buffInputStream);
         }catch (IOException e){

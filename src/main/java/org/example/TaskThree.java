@@ -10,14 +10,7 @@ public class TaskThree {
     private static final String absolutePath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\task3\\words.txt";
     public static void main(String[] args) {
         File file = new File(absolutePath);
-        if (!file.exists()){
-            file.getParentFile().mkdirs();
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        makeFile(file);
         try(BufferedInputStream buffInputStream = new BufferedInputStream(new FileInputStream(file))){
             printWordFreqFile(buffInputStream);
         }catch (IOException e){
@@ -30,8 +23,7 @@ public class TaskThree {
         byte[] data = buffInputStream.readAllBytes();
 
         String all = new String(data);
-        all = removeSpaces(all);
-        String words[] = all.replace("\r\n", " ").split("\\W");
+        String words[] = removeSpaces(all).replace("\r\n", " ").split("\\W");
 
         Map<String, Integer> mp = new HashMap<>();
 
@@ -81,6 +73,16 @@ public class TaskThree {
             toRemove = toRemove.replace("  ", " ");
         }while (!toRemove.equals(last));
         return toRemove;
+    }
+    public static void makeFile(File file){
+        if (!file.exists()){
+            file.getParentFile().mkdirs();
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
 /*

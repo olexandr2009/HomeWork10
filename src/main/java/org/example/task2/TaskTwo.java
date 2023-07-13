@@ -1,5 +1,7 @@
 package org.example.task2;
 
+import org.example.TaskThree;
+
 import java.io.*;
 import java.util.*;
 
@@ -10,16 +12,10 @@ public class TaskTwo {
 
         File file = new File(absolutePath);
         File fileJSON = new File(absoluteJSONPath);
-        if (!file.exists() || !fileJSON.exists()){
-            file.getParentFile().mkdirs();
-            fileJSON.getParentFile().mkdirs();
-            try {
-                file.createNewFile();
-                fileJSON.createNewFile();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+
+        TaskThree.makeFile(file);
+        TaskThree.makeFile(fileJSON);
+
         List<User> users = new ArrayList<>();
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(file))){
             User.setKeys(bufferedReader.readLine().split(" "));
