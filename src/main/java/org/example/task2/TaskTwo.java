@@ -6,8 +6,8 @@ import java.io.*;
 import java.util.*;
 
 public class TaskTwo {
-    private static final String absolutePath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\task2\\file.txt";
-    private static final String absoluteJSONPath = "C:\\IdeaProgects\\HomeWork10\\src\\main\\resources\\task2\\user.json";
+    private static final String absolutePath = ".src\\main\\resources\\task2\\file.txt";
+    private static final String absoluteJSONPath = ".src\\main\\resources\\task2\\user.json";
     public static void main(String[] args) {
 
         File file = new File(absolutePath);
@@ -18,6 +18,9 @@ public class TaskTwo {
 
         List<User> users = new ArrayList<>();
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(file))){
+            if (bufferedReader.read() == -1){
+                return;
+            }
             User.setKeys(bufferedReader.readLine().split(" "));
 
             String[] line;
