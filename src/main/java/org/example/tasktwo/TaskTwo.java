@@ -18,7 +18,7 @@ public class TaskTwo {
         TaskThree.makeFile(file);
         TaskThree.makeFile(fileJSON);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        StringBuilder sb = new StringBuilder();
+
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileJSON)))
         {
