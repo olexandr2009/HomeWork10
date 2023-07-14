@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TaskOne {
-    private static final String absolutePath = ".src\\main\\resources\\task1\\file.txt";
+    private static final String absolutePath = "./src/main/resources/task1/file1.txt";
     public static void main(String[] args) {
         File file = new File(absolutePath);
 

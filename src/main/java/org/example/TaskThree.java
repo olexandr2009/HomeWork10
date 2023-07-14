@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class TaskThree {
-    private static final String absolutePath = ".src\\main\\resources\\task3\\words.txt";
+    private static final String absolutePath = "./src/main/resources/task3/words.txt";
     public static void main(String[] args) {
         File file = new File(absolutePath);
         makeFile(file);

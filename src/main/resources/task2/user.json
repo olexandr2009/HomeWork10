@@ -1,12 +1,10 @@
 [
-	{
-		"name": "lice",
-		"age": "21",
-		"parents": "null"
-	},
-	{
-		"name": "yan",
-		"age": "30",
-		"parents": "null"
-	}
+  {
+    "name": "alice",
+    "age": 21
+  },
+  {
+    "name": "ryan",
+    "age": 30
+  }
 ]
